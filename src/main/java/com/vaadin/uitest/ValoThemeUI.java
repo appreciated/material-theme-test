@@ -26,6 +26,7 @@ import com.vaadin.navigator.Navigator;
 import com.vaadin.navigator.ViewChangeListener;
 import com.vaadin.server.*;
 import com.vaadin.shared.ui.ContentMode;
+import com.vaadin.spring.annotation.SpringUI;
 import com.vaadin.ui.*;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Button.ClickListener;
@@ -46,6 +47,7 @@ import java.util.Map.Entry;
 @PreserveOnRefresh
 @Viewport("user-scalable=no,initial-scale=1.0")
 @Widgetset("com.vaadin.v7.Vaadin7WidgetSet")
+@SpringUI
 public class ValoThemeUI extends UI {
 
     static final String CAPTION_PROPERTY = "caption";
