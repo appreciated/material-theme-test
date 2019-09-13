@@ -22,11 +22,11 @@ import com.vaadin.icons.VaadinIcons;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.server.AbstractErrorMessage;
-import com.vaadin.server.ErrorMessage.ErrorLevel;
 import com.vaadin.server.Page;
 import com.vaadin.server.UserError;
 import com.vaadin.shared.Position;
 import com.vaadin.shared.ui.ContentMode;
+import com.vaadin.shared.ui.ErrorLevel;
 import com.vaadin.ui.*;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Button.ClickListener;
@@ -249,12 +249,7 @@ public class CommonParts extends VerticalLayout implements View {
                 delay.setValue("1000");
                 group.addComponent(delay);
 
-                Button clear = new Button(null, new ClickListener() {
-                    @Override
-                    public void buttonClick(ClickEvent event) {
-                        delay.setValue("");
-                    }
-                });
+                Button clear = new Button("", (ClickListener) event -> delay.setValue(""));
                 clear.setIcon(VaadinIcons.CLOSE_CIRCLE);
                 clear.addStyleName("last");
                 clear.addStyleName(ValoTheme.BUTTON_SMALL);
